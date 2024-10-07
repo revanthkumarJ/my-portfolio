@@ -10,7 +10,7 @@ function Navbar() {
         <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold', fontFamily: 'Roboto, sans-serif' }}>
           JILAKARA REVANTH KUMAR PORTFOLIO
         </Typography>
-        <Button color="inherit" component={Link} to="/my-portfolio" sx={{ padding: '10px 20px', fontWeight: 'bold', fontFamily: 'Roboto, sans-serif' }}>Home</Button>
+        <Button color="inherit" component={Link} to="/" sx={{ padding: '10px 20px', fontWeight: 'bold', fontFamily: 'Roboto, sans-serif' }}>Home</Button>
         <Button color="inherit" component={Link} to="/projects" sx={{ padding: '10px 20px', fontWeight: 'bold', fontFamily: 'Roboto, sans-serif' }}>Projects</Button>
         <Button color="inherit" component={Link} to="/certifications" sx={{ padding: '10px 20px', fontWeight: 'bold', fontFamily: 'Roboto, sans-serif' }}>Certifications</Button>
         <Button color="inherit" component={Link} to="/about" sx={{ padding: '10px 20px', fontWeight: 'bold', fontFamily: 'Roboto, sans-serif' }}>About Me</Button>

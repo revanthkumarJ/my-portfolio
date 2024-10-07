@@ -10,10 +10,10 @@ import Contact from './pages/Contact'; // Assuming you have a Contact component
 
 function App() {
   return (
-    <Router>
+    <Router basename="/my-portfolio">
       <Navbar />
       <Routes>
-        <Route exact path="/my-portfolio" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/about" element={<About />} />
