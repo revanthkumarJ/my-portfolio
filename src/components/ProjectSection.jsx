@@ -89,16 +89,22 @@ const ProjectsSection = () => {
         ))}
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-        <Button
-          variant="outlined"
-          color="primary"
-          component={Link} // Use Link for internal routing
-          to="/projects" // Use 'to' instead of 'href'
-          sx={{ fontFamily: 'Arial, sans-serif', fontSize: '1.5rem', padding: '1rem 2rem', color: 'white', borderColor: 'white' }}
-        >
-          See All Projects
-        </Button>
-      </Box>
+      <Button
+        variant="outlined"
+        color="primary"
+        sx={{ 
+          fontFamily: 'Arial, sans-serif', 
+          fontSize: '1.5rem', 
+          padding: '1rem 2rem', 
+          color: 'white', 
+          borderColor: 'white' 
+        }}
+        component={Link} // Use Link component for routing
+        to="/projects" // Correctly set the 'to' property
+      >
+        See All Projects
+      </Button>
+    </Box>
     </Box>
   );
 };

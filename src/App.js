@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter  as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home'; // Assuming you have a Home component
 import Projects from './pages/Projects'; // Assuming you have a Projects component
@@ -10,7 +10,7 @@ import Contact from './pages/Contact'; // Assuming you have a Contact component
 
 function App() {
   return (
-    <Router basename="/my-portfolio">
+    <Router>
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
