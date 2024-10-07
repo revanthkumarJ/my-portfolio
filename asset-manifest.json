@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/my-portfolio/static/js/main.866dbd28.js",
+    "main.js": "/my-portfolio/static/js/main.707ef3e0.js",
     "static/js/453.41811d64.chunk.js": "/my-portfolio/static/js/453.41811d64.chunk.js",
     "static/media/PythonForEveryBody.jpg": "/my-portfolio/static/media/PythonForEveryBody.29d6b817d3c3064fd9b5.jpg",
     "static/media/CoreJava.jpg": "/my-portfolio/static/media/CoreJava.80d96cd24c9131c7f8c0.jpg",
@@ -52,11 +52,11 @@
     "static/media/postman.jpg": "/my-portfolio/static/media/postman.e63aeb0fcd2b599ebb73.jpg",
     "index.html": "/my-portfolio/index.html",
     "main.e6c13ad2.css.map": "/my-portfolio/static/css/main.e6c13ad2.css.map",
-    "main.866dbd28.js.map": "/my-portfolio/static/js/main.866dbd28.js.map",
+    "main.707ef3e0.js.map": "/my-portfolio/static/js/main.707ef3e0.js.map",
     "453.41811d64.chunk.js.map": "/my-portfolio/static/js/453.41811d64.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.866dbd28.js"
+    "static/js/main.707ef3e0.js"
   ]
 }
