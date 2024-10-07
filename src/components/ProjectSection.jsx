@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, Card, CardContent, CardActions, Chip } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import GitHubIcon from '@mui/icons-material/GitHub'; // Import GitHub icon
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { GitHub } from '@mui/icons-material'; // Import GitHub icon
+import { styled } from '@mui/system';
 
 // Sample projects data
 const projects = [
@@ -10,32 +9,30 @@ const projects = [
     title: 'SRC Student Club Mobile App',
     description: 'Currently developing a mobile application for the department’s student club, collaborated with a friend, and integrated it with an existing Express backend.',
     technologies: ['Kotlin', 'Jetpack', 'Express'],
-    githubLink: 'https://github.com/your-github-username/src-student-club-app', // Replace with actual GitHub link
+    githubLink: 'https://github.com/revanthkumarJ/SRC-Android', // Replace with actual GitHub link
   },
   {
     title: 'Netflix and Instagram UI',
     description: 'Developed user interfaces for Netflix and Instagram using Jetpack Compose, focusing on creating pixel-perfect layouts.',
     technologies: ['Jetpack Compose'],
-    githubLink: 'https://github.com/your-github-username/netflix-instagram-ui', // Replace with actual GitHub link
+    githubLink: 'https://github.com/revanthkumarJ/InstaUI', // Replace with actual GitHub link
   },
   {
     title: 'Finance API',
     description: 'Currently developing a finance API that processes bank statements, manages data uploads, and allows for individual data handling, including filtering and more.',
     technologies: ['Node', 'Express', 'TypeScript'],
-    githubLink: 'https://github.com/your-github-username/finance-api', // Replace with actual GitHub link
+    githubLink: 'https://github.com/revanthkumarJ/Finance-API', // Replace with actual GitHub link
   },
 ];
 
 // Styled components for better UI
 const StyledCard = styled(Card)(({ theme }) => ({
-  backgroundColor: '#000000', // Darker card background for more black
+  backgroundColor: '#1c1c1c', // Darker card background for more black
   color: 'white',
-  transition: 'transform 0.3s, box-shadow 0.3s',
-  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)', // Added shadow for depth
-  '&:hover': {
-    transform: 'scale(1.05)',
-    boxShadow: theme.shadows[8], // Increase shadow on hover
-  },
+  flexGrow: 1, // Allow card to grow
+  padding: '1.5rem',
+  boxShadow: '0 4px 10px rgba(255, 255, 255, 0.2)', // Shadow for depth
+  margin: '0.5rem', // Margin for spacing between cards
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -45,29 +42,37 @@ const StyledButton = styled(Button)(({ theme }) => ({
     backgroundColor: '#1e1e1e', // Darker shade on hover
   },
   width: '100%', // Make buttons full width for alignment
-  justifyContent: 'center',
 }));
 
 const ProjectsSection = () => {
   return (
-    <Box sx={{ padding: '4rem', backgroundColor: '#121212', color: 'white' }}> {/* Black shade for background */}
-      <Typography variant="h3" sx={{ marginBottom: '2rem', fontFamily: 'Arial, sans-serif', fontWeight: 'bold', textAlign: 'center' }}>
+    <Box
+      sx={{
+        backgroundColor: '#121212', // Dark mode background
+        color: 'white',
+        padding: '2rem',
+        boxShadow: '0 0 15px rgba(0, 0, 0, 0.5)',
+      }}
+    >
+      <Typography variant="h3" sx={{ marginBottom: '2rem', fontWeight: 'bold', textAlign: 'center' }}>
         My Projects
       </Typography>
+
       <Box
         sx={{
           display: 'flex',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
+          flexDirection: { xs: 'column', sm: 'column', md: 'row' }, // Adjusts layout based on screen size
+          justifyContent: 'center',
+          alignItems: 'stretch', // Ensure all cards stretch to the same height
         }}
       >
         {projects.map((project, index) => (
-          <StyledCard key={index} sx={{ width: '30%', margin: '1rem' }}>
+          <StyledCard key={index}>
             <CardContent>
-              <Typography variant="h5" gutterBottom sx={{ fontFamily: 'Georgia, serif', fontWeight: 'bold' }}>
+              <Typography variant="h5" sx={{ marginBottom: '1rem', fontWeight: 'bold' }}>
                 {project.title}
               </Typography>
-              <Typography variant="body2" gutterBottom sx={{ fontFamily: 'Verdana, sans-serif', lineHeight: 1.5 }}>
+              <Typography variant="body2" sx={{ marginBottom: '1rem' }}>
                 {project.description}
               </Typography>
               <Box sx={{ marginTop: 1 }}>
@@ -81,30 +86,13 @@ const ProjectsSection = () => {
               </Box>
             </CardContent>
             <CardActions sx={{ justifyContent: 'center' }}>
-              <StyledButton size="small" href={project.githubLink} target="_blank">
-                <GitHubIcon sx={{ marginRight: '0.5rem' }} /> GitHub
+              <StyledButton size="small" href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                <GitHub sx={{ marginRight: '0.5rem' }} /> GitHub
               </StyledButton>
             </CardActions>
           </StyledCard>
         ))}
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-      <Button
-        variant="outlined"
-        color="primary"
-        sx={{ 
-          fontFamily: 'Arial, sans-serif', 
-          fontSize: '1.5rem', 
-          padding: '1rem 2rem', 
-          color: 'white', 
-          borderColor: 'white' 
-        }}
-        component={Link} // Use Link component for routing
-        to="/projects" // Correctly set the 'to' property
-      >
-        See All Projects
-      </Button>
-    </Box>
     </Box>
   );
 };
