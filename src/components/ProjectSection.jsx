@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography, Button, Card, CardContent, CardActions, Chip } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub'; // Import GitHub icon
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 // Sample projects data
 const projects = [
@@ -71,10 +72,10 @@ const ProjectsSection = () => {
               </Typography>
               <Box sx={{ marginTop: 1 }}>
                 {project.technologies.map((tech, index) => (
-                  <Chip 
-                    key={index} 
-                    label={tech} 
-                    sx={{ margin: '0.25rem', backgroundColor: '#3C3C3C', color: 'white' }} 
+                  <Chip
+                    key={index}
+                    label={tech}
+                    sx={{ margin: '0.25rem', backgroundColor: '#3C3C3C', color: 'white' }}
                   />
                 ))}
               </Box>
@@ -91,8 +92,9 @@ const ProjectsSection = () => {
         <Button
           variant="outlined"
           color="primary"
-          sx={{ fontFamily: 'Arial, sans-serif', fontSize: '1.5rem', padding: '1rem 2rem', color: 'white', borderColor: 'white' }} // Increased size
-          href="/my-portfolio/projects" // Replace with the actual route to your projects page
+          component={Link} // Use Link for internal routing
+          to="/projects" // Use 'to' instead of 'href'
+          sx={{ fontFamily: 'Arial, sans-serif', fontSize: '1.5rem', padding: '1rem 2rem', color: 'white', borderColor: 'white' }}
         >
           See All Projects
         </Button>
