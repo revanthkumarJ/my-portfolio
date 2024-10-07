@@ -92,7 +92,7 @@ const ProjectsSection = () => {
           variant="outlined"
           color="primary"
           sx={{ fontFamily: 'Arial, sans-serif', fontSize: '1.5rem', padding: '1rem 2rem', color: 'white', borderColor: 'white' }} // Increased size
-          href="/projects" // Replace with the actual route to your projects page
+          href="/my-portfolio/projects" // Replace with the actual route to your projects page
         >
           See All Projects
         </Button>
