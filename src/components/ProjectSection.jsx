@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography, Button, Card, CardContent, CardActions, Chip } from '@mui/material';
 import { GitHub } from '@mui/icons-material'; // Import GitHub icon
 import { styled } from '@mui/system';
+import { Link } from 'react-router-dom'; 
 
 // Sample projects data
 const projects = [
@@ -93,6 +94,25 @@ const ProjectsSection = () => {
           </StyledCard>
         ))}
       </Box>
+
+
+      {/* See All Projects Button */}
+  <Box sx={{ marginTop: '2rem', textAlign: 'center' }}>
+    <Button
+      variant="contained"
+      component={Link}
+      to="/projects" // Redirect to /projects
+      sx={{
+        backgroundColor: '#3C3C3C',
+        color: 'white',
+        '&:hover': {
+          backgroundColor: '#555555',
+        },
+      }}
+    >
+      See All Projects
+    </Button>
+  </Box>
     </Box>
   );
 };

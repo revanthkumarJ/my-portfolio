@@ -48,7 +48,7 @@ const codingProfiles = [
     platform: "LeetCode",
     link: "https://leetcode.com/u/RevanthKumarJ/",
     problemsSolved: "800+",
-    maxRating: "1872",
+    maxRating: "1905",
     title: "Knight badge holder",
     logo: LeetCodeIcon
   },

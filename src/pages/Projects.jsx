@@ -3,10 +3,12 @@ import React from 'react';
 import { Typography, Box } from '@mui/material';
 import ProjectCard from '../components/ProjectCard'; // Import the ProjectCard component
 import projectImage1 from '../images/CoreJava.jpg'; // Replace with your actual image paths
-import projectImage2 from '../images/dsa_winner.jpg';
+import Finance from '../images/Finance.png';
 import EventmanagementProject from '../images/ProjectEvent.jpeg';
 import InstaProject from '../images/ProjectInsta.jpeg';
 import NetflixProject from '../images/ProjectNetflix.jpeg';
+import KisanConnect from '../images/KisanCoonect (1).png';
+import DevPro from "../images/DevPro.png" 
 
 function Projects() {
     const projects = [
@@ -36,6 +38,33 @@ function Projects() {
           frontendLink: "https://github.com/revanthkumarJ/NetFlixUI",
           backendLink: null, // No backend link
           videoLink: "https://www.linkedin.com/posts/jilakararevanthkumar_androiddevelopment-jetpackcompose-uiuxdesign-activity-7216054864601055232-R0yI?utm_source=share&utm_medium=member_desktop"
+        },
+        {
+          image: Finance, // Replace with your image variable
+          name: "Finance Website",
+          description: "A project for the finance office of our college. The API allows users to upload bank MSI, student details in Excel, tuition fee Excel, hostel fee Excel, and more. It scrapes these details and organizes them in a structured manner, enabling users to retrieve any information using filter options for graphs and other analyses.",
+          technologies: ["React","Node JS","Type Script","Express JS"],
+          frontendLink: "https://github.com/revanthkumarJ/Finance-Client",
+          backendLink: "https://github.com/revanthkumarJ/Finance-API",
+          videoLink: null
+        },
+        {
+          image: KisanConnect, // Replace with your image variable
+          name: "KISAN CONNECT API",
+          description: "KISAN CONNECT is a RESTful API built to streamline the agricultural supply chain, connecting farmers, buyers, and delivery agents. The API facilitates efficient communication and transaction management between these entities, providing features such as user authentication, produce listing, order placement, and delivery tracking.",
+          technologies: ["Node JS","Type Script","Express JS"],
+          frontendLink: null,
+          backendLink: "https://github.com/revanthkumarJ/Kisan_connect_API",
+          videoLink: null
+        },
+        {
+          image: DevPro, // Replace with your image variable
+          name: "Dev Learn",
+          description: "A website to learn HTML,CSS,JS",
+          technologies: ["HTML","CSS","JS","PHP","BOOTSTRAP"],
+          frontendLink: null,
+          backendLink: null,
+          videoLink: "https://www.linkedin.com/posts/jilakararevanthkumar_webdevelopment-learning-html-activity-7200797395209625600-bSpZ?utm_source=share&utm_medium=member_desktop"
         },
         // {
         //   image: projectImage1, // Replace with your image variable

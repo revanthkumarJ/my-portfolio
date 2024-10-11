@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import PreviewDialog from './PreviewDialog'; // Import the PreviewDialog component
 
-function CertificateCard({ image, name, issuedBy, issuedOn, verifyLink }) {
+function InternshipCard({ image, internshipName, companyName, duration, description }) {
   const [open, setOpen] = useState(false); // State for dialog open/close
 
   const handlePreviewOpen = () => {
@@ -16,18 +16,16 @@ function CertificateCard({ image, name, issuedBy, issuedOn, verifyLink }) {
   return (
     <>
       <Card sx={{ 
-        // Set responsive width and add margin for spacing
         width: '100%', 
-       
         background: 'linear-gradient(to bottom right, #0f0f0f, #1a1a2e, #16213e, #0f3460)', // Enhanced gradient background
         color: '#ffffff', // Light text color
         elevation: 3 // Add elevation for depth
       }}>
         <CardMedia 
           component="img" 
-          width="100%" // Set image width to 90% of the card
+          width="100%" // Set image width to 100% of the card
           image={image} 
-          alt={name} 
+          alt={internshipName} 
           sx={{ 
             objectFit: 'contain', 
             padding: '0px', // Add padding around the image
@@ -36,18 +34,24 @@ function CertificateCard({ image, name, issuedBy, issuedOn, verifyLink }) {
         />
         <CardContent sx={{ textAlign: 'center' }}> {/* Center text below image */}
           <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
-            {name}
+            {internshipName}
           </Typography>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
-            <Typography variant="body2" sx={{ fontWeight: 'bold' }}>Issued By: </Typography>
+            <Typography variant="body2" sx={{ fontWeight: 'bold' }}>Company: </Typography>
             <Typography variant="body2" sx={{ marginLeft: '5px', fontFamily: 'Arial, sans-serif' }}>
-              {issuedBy}
+              {companyName}
+            </Typography>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+            <Typography variant="body2" sx={{ fontWeight: 'bold' }}>Duration: </Typography>
+            <Typography variant="body2" sx={{ marginLeft: '5px', fontFamily: 'Arial, sans-serif' }}>
+              {duration}
             </Typography>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-            <Typography variant="body2" sx={{ fontWeight: 'bold' }}>Issued On: </Typography>
+            <Typography variant="body2" sx={{ fontWeight: 'bold' }}>Description: </Typography>
             <Typography variant="body2" sx={{ marginLeft: '5px', fontFamily: 'Arial, sans-serif' }}>
-              {issuedOn}
+              {description}
             </Typography>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '8px' }}>
@@ -55,7 +59,7 @@ function CertificateCard({ image, name, issuedBy, issuedOn, verifyLink }) {
               size="small" 
               onClick={handlePreviewOpen} 
               sx={{ 
-                backgroundColor: '#9B59B6     ', 
+                backgroundColor: '#9B59B6', 
                 color: '#ffffff', 
                 padding: '6px 12px',
                 '&:hover': {
@@ -65,26 +69,13 @@ function CertificateCard({ image, name, issuedBy, issuedOn, verifyLink }) {
             >
               Preview
             </Button>
-            <Button 
-              size="small" 
-              onClick={() => window.open(verifyLink, '_blank')} 
-              sx={{ 
-                backgroundColor: '#6A5ACD ', 
-                color: '#ffffff', 
-                padding: '6px 12px',
-                '&:hover': {
-                  backgroundColor: '#003366', // Darker blue on hover
-                },
-              }}
-            >
-              Verify
-            </Button>
+            
           </div>
         </CardContent>
       </Card>
-      <PreviewDialog open={open} onClose={handlePreviewClose} image={image} text={name} />
+      <PreviewDialog open={open} onClose={handlePreviewClose} image={image} text={internshipName} />
     </>
   );
 }
 
-export default CertificateCard;
+export default InternshipCard;

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Typography, Box, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 import ImportantCertificates from './ImportantCertificates';
 import AllCertificates from './AllCertificates';
+import SkillCertificates from './SkillCertificates';
+import EventCertificates from './EventCertificates';
+import Internships from './InternshipPage';
 
 function Certificates() {
   // State to manage selected certificate type
@@ -39,12 +42,27 @@ function Certificates() {
         <FormControlLabel 
           value="all" 
           control={<Radio sx={{ color: '#ffffff' }} />} 
-          label="All Certificates" 
+          label="All Course Certificates" 
+        />
+        <FormControlLabel 
+          value="skill" 
+          control={<Radio sx={{ color: '#ffffff' }} />} 
+          label="All Skill Certificates" 
+        />
+        <FormControlLabel 
+          value="event" 
+          control={<Radio sx={{ color: '#ffffff' }} />} 
+          label="All Events Certificates" 
+        />
+        <FormControlLabel 
+          value="internships" 
+          control={<Radio sx={{ color: '#ffffff' }} />} 
+          label="Internships" 
         />
       </RadioGroup>
 
       {/* Conditional rendering based on selected certificate type */}
-      {selectedCertificateType === 'important' ? <ImportantCertificates /> : <AllCertificates />}
+      {selectedCertificateType === 'important' ? <ImportantCertificates /> : selectedCertificateType === 'all' ? <AllCertificates/>:selectedCertificateType === 'event' ? <EventCertificates/>: selectedCertificateType === 'internships' ? <Internships/>:<SkillCertificates/>}
     </Box>
   );
 }

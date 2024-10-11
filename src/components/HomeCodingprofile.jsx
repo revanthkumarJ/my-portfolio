@@ -19,10 +19,10 @@ const codingProfiles = [
   },
   { name: 'Coding Ninjas', image: CodingNinjasIcon, url: 'https://www.codingninjas.com/codestudio/profile/revanthKumarJ', // Replace with your actual link
   },
-  { name: 'AtCoder', image: AtCoderIcon, url: 'https://atcoder.jp/users/your-username', // Replace with your actual link
+  { name: 'AtCoder', image: AtCoderIcon, url: 'https://atcoder.jp/users/RevanthJ', // Replace with your actual link
   },
-  { name: 'Codeforces', image: CodeforcesIcon, url: 'https://codeforces.com/profile/your-username', // Replace with your actual link
-  },
+  // { name: 'Codeforces', image: CodeforcesIcon, url: 'https://codeforces.com/profile/jrevanth', // Replace with your actual link
+  // },
 ];
 
 const CodingProfiles = () => {
